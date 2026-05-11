@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetLog - 이해하기 쉬운 병원비 기록</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <div class="mesh-bg">
+    <div class="mesh-1"></div>
+    <div class="mesh-2"></div>
+  </div>
+
+  <div id="progress-bar"></div>
+
+  <header class="header" id="main-header">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+      <a href="#" class="logo-link">
+        <img src="./assets/logo.PNG" alt="PetLog" style="width:36px;height:36px;border-radius:10px;object-fit:cover;">
+        <span>PetLog</span>
+      </a>
+      <nav class="header-nav">
+        <a href="#why" class="header-nav-link">만든 이유</a>
+        <a href="https://forms.gle/BroTa5oyXdejbPEA6" target="_blank" rel="noopener" class="header-nav-btn">무료 베타</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-header">
+      <h1 class="fade-up">반려동물 병원비,<br>이제 이해하기 쉽게 기록하세요</h1>
+      <p class="fade-up" style="transition-delay: 200ms;">복잡한 동물병원 영수증을 PetLog AI가 읽고<br>보호자가 확인할 수 있는 지출 기록 초안으로 정리해
+        드립니다.</p>
+      <div class="fade-up" style="transition-delay: 400ms;">
+        <a href="https://forms.gle/BroTa5oyXdejbPEA6" target="_blank" rel="noopener" class="btn-premium">무료 베타 신청하기</a>
+      </div>
+    </div>
+
+    <div class="container hero-scene">
+      <!-- Transformation Elements -->
+      <div class="floating-card card-receipt fade-up" style="transition-delay: 600ms;">
+        <div style="font-weight: 800; font-size: 14px; margin-bottom: 12px; color: var(--text-muted);">복잡한 영수증</div>
+        <div style="height: 10px; background: #eee; margin-bottom: 8px; border-radius: 5px; width: 80%;"></div>
+        <div style="height: 10px; background: #eee; margin-bottom: 8px; border-radius: 5px; width: 40%;"></div>
+        <div style="border-top: 1px dashed #ddd; margin: 15px 0;"></div>
+        <div style="display: flex; justify-content: space-between; font-weight: 800; color: #ddd;">
+          <span>합계</span><span>46,000</span></div>
+      </div>
+
+      <div class="scene-center fade-up" style="transition-delay: 500ms;">
+        <div class="scene-phone">
+          <div class="phone-inner"
+            style="background:#F7F8FA;overflow-y:auto;scrollbar-width:none;display:flex;flex-direction:column;">
+            <div
+              style="display:flex;justify-content:space-between;align-items:center;padding:14px 22px 0;font-size:11px;font-weight:700;color:#191F28;flex-shrink:0;">
+              <span>9:41</span>
+              <div style="display:flex;gap:5px;align-items:center;color:#4E5968;"><svg width="13" height="10"
+                  viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z" />
+                </svg><svg width="20" height="11" viewBox="0 0 28 14" fill="currentColor">
+                  <rect x="0" y="1" width="24" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"
+                    opacity="0.35" />
+                  <rect x="1.5" y="2.5" width="18" height="9" rx="2" />
+                  <path d="M25 5v4c1.5-.8 1.5-3.2 0-4z" />
+                </svg></div>
+            </div>
+            <div
+              style="display:flex;justify-content:space-between;align-items:center;padding:10px 20px 12px;flex-shrink:0;">
+              <div style="display:flex;align-items:center;gap:9px;"><img src="./assets/logo.PNG"
+                  style="width:30px;height:30px;border-radius:9px;object-fit:cover;"><span
+                  style="font-weight:900;font-size:19px;color:#191F28;letter-spacing:-0.03em;">PetLog</span></div>
+              <div
+                style="width:36px;height:36px;background:#F2F4F6;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E5968" stroke-width="2.2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                </svg></div>
+            </div>
+            <div
+              style="margin:0 14px 10px;background:#FFFBEB;border:1px solid #FDE68A;border-radius:12px;padding:9px 13px;display:flex;align-items:flex-start;gap:7px;flex-shrink:0;">
+              <span style="font-size:12px;flex-shrink:0;margin-top:1px;">📢</span><span
+                style="font-size:10.5px;font-weight:600;color:#92400E;line-height:1.45;">현재 AI 과부하로 인해 분석이 중지될 수
+                있습니다.</span></div>
+            <div
+              style="margin:0 14px 10px;background:white;border-radius:20px;padding:18px 20px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.03);flex-shrink:0;">
+              <div style="font-size:11px;font-weight:700;color:#8B95A1;margin-bottom:3px;">이번 달 반려동물 지출</div>
+              <div style="font-size:28px;font-weight:900;color:#191F28;letter-spacing:-0.03em;margin-bottom:14px;">
+                50,000<span style="font-size:16px;">원</span></div>
+              <div
+                style="background:#F0FBF8;border-radius:14px;padding:13px 15px;border:1px solid rgba(17,197,165,.12);">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:7px;"><svg width="12" height="12"
+                    viewBox="0 0 24 24" fill="#11C5A5">
+                    <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+                  </svg><span style="font-size:11.5px;font-weight:800;color:#11C5A5;">AI 지출 브리핑</span></div>
+                <p style="font-size:11.5px;font-weight:600;color:#333D4B;line-height:1.5;margin:0 0 8px;">이번 달 지출 흐름을
+                  참고용으로 정리했어요.</p>
+                <div style="font-size:9.5px;color:#8B95A1;font-weight:500;">* AI 분석은 참고용이며 진단·처방을 제공하지 않습니다.</div>
+              </div>
+            </div>
+            <div style="margin:0 14px 14px;flex-shrink:0;">
+              <div
+                style="background:linear-gradient(135deg,#11C5A5,#0D9E85);border-radius:18px;padding:14px 18px;display:flex;align-items:center;gap:13px;box-shadow:0 10px 28px rgba(17,197,165,.35);">
+                <div
+                  style="width:38px;height:38px;background:rgba(255,255,255,.22);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                    <circle cx="12" cy="13" r="4" />
+                  </svg></div>
+                <div>
+                  <div style="font-size:14.5px;font-weight:900;color:white;">영수증 분석하기</div>
+                  <div style="font-size:9.5px;color:rgba(255,255,255,.82);font-weight:600;margin-top:2px;">진료·용품·사료 자동
+                    분류</div>
+                </div>
+              </div>
+            </div>
+            <div style="padding:0 20px 10px;flex-shrink:0;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span
+                  style="font-size:12px;font-weight:800;color:#191F28;">나의 반려동물</span><span
+                  style="font-size:11px;font-weight:700;color:#11C5A5;">+ 추가</span></div>
+              <div style="display:flex;gap:12px;">
+                <div style="text-align:center;">
+                  <div
+                    style="width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#FFD6CC,#FFA58C);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 10px rgba(255,120,80,.22);margin-bottom:3px;">
+                    🐶</div><span style="font-size:10px;font-weight:700;color:#4E5968;">호두</span>
+                </div>
+                <div style="text-align:center;">
+                  <div
+                    style="width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#FFF0D6,#FFCC80);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 10px rgba(255,170,0,.22);margin-bottom:3px;">
+                    🐱</div><span style="font-size:10px;font-weight:700;color:#4E5968;">나나</span>
+                </div>
+              </div>
+            </div>
+            <div
+              style="margin:0 14px 10px;background:white;border-radius:20px;padding:16px 18px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.03);flex-shrink:0;">
+              <div style="font-size:12px;font-weight:800;color:#191F28;margin-bottom:12px;">카테고리별 지출</div>
+              <div
+                style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #F2F4F6;">
+                <div style="display:flex;align-items:center;gap:9px;">
+                  <div
+                    style="width:30px;height:30px;background:#FFF0F0;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;">
+                    🏥</div><span style="font-size:12px;font-weight:700;color:#333D4B;">병원비</span>
+                </div><span style="font-size:12px;font-weight:800;color:#191F28;">0원</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;">
+                <div style="display:flex;align-items:center;gap:9px;">
+                  <div
+                    style="width:30px;height:30px;background:#FFF8E7;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;">
+                    🍖</div><span style="font-size:12px;font-weight:700;color:#333D4B;">사료·간식</span>
+                </div><span style="font-size:12px;font-weight:800;color:#191F28;">50,000원</span>
+              </div>
+            </div>
+            <div
+              style="margin-top:auto;background:white;border-top:1px solid #F2F4F6;display:flex;padding:8px 0 10px;flex-shrink:0;">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><svg width="20"
+                  height="20" viewBox="0 0 24 24" fill="#11C5A5">
+                  <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                </svg><span style="font-size:9px;font-weight:800;color:#11C5A5;">홈</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><svg width="20"
+                  height="20" viewBox="0 0 24 24" fill="none" stroke="#B0B8C1" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                </svg><span style="font-size:9px;font-weight:600;color:#B0B8C1;">일정</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><svg width="20"
+                  height="20" viewBox="0 0 24 24" fill="none" stroke="#B0B8C1" stroke-width="2">
+                  <path d="M8 7v10M12 12v5M16 14v3M2 2v20h20" />
+                </svg><span style="font-size:9px;font-weight:600;color:#B0B8C1;">통계</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><svg width="20"
+                  height="20" viewBox="0 0 24 24" fill="none" stroke="#B0B8C1" stroke-width="2">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4z" />
+                </svg><span style="font-size:9px;font-weight:600;color:#B0B8C1;">지출등록</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><svg width="20"
+                  height="20" viewBox="0 0 24 24" fill="none" stroke="#B0B8C1" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg><span style="font-size:9px;font-weight:600;color:#B0B8C1;">마이페이지</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="floating-card card-record fade-up" style="transition-delay: 700ms;">
+        <div class="ai-badge-mint">📊 분석 초안</div>
+        <div style="font-weight: 900; font-size: 18px; margin-top: 8px;">다솜동물병원 46,000원</div>
+        <div style="font-size: 13px; color: var(--text-sub); margin-top: 4px;">진료비, 검사비 자동 분류</div>
+      </div>
+
+      <div class="floating-card card-briefing fade-up" style="transition-delay: 800ms;">
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <div
+            style="width: 40px; height: 40px; background: var(--brand-soft); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+            💡</div>
+          <div>
+            <div style="font-weight: 800; font-size: 14px;">지출 기록 초안</div>
+            <div style="font-size: 11px; color: var(--text-sub);">나나의 식품 관련 지출로 분류되었어요.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="container hero-stats fade-up" style="transition-delay:900ms;">
+      <div class="stat-item">
+        <div class="stat-num" data-target="10">0</div>
+        <div class="stat-label">베타 테스터 모집 중</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num-text">👍</div>
+        <div class="stat-label">반려인 긍정 반응</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num-text">Beta</div>
+        <div class="stat-label">무료 베타 서비스 중</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker / Marquee -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>🐶 AI 영수증 분석</span><span>📊 월간 지출 브리핑</span><span>🐱 반려동물별 기록</span><span>📝 케어 기록 후보</span><span>🏥 의료비
+        카테고리 정리</span><span>🖨️ PDF 저장</span>
+      <span>🐶 AI 영수증 분석</span><span>📊 월간 지출 브리핑</span><span>🐱 반려동물별 기록</span><span>📝 케어 기록 후보</span><span>🏥 의료비
+        카테고리 정리</span><span>🖨️ PDF 저장</span>
+    </div>
+  </div>
+
+  <!-- ── Section: Why ── -->
+  <section class="why-section" id="why">
+    <div class="container why-grid">
+
+      <!-- Left: emotional copy -->
+      <div class="why-left fade-up">
+        <div class="why-eyebrow">만든 이유</div>
+        <h2 class="why-heading">왜 만들었나요?</h2>
+        <p class="why-lead">&ldquo;영수증은 버려지지만,<br>기록은 남아야 하니까.&rdquo;</p>
+      </div>
+
+      <!-- Right: description card -->
+      <div class="why-right fade-up" style="transition-delay:200ms;">
+        <div class="why-card">
+          <p class="why-body">반려동물이 아파 병원에 다녀오면, 영수증은 쉽게 버려지지만 기록은 오래 필요합니다.</p>
+          <p class="why-body">PetLog는 복잡한 동물병원 영수증을 보호자가 이해하기 쉬운 지출 기록으로 정리하고, 병원 안내를 받은 복약·재진·회복 체크 내용을 함께 기록할 수 있도록 돕기
+            위해 만들었습니다.</p>
+          <div class="why-notice">
+            <span class="why-notice-icon">⚠️</span>
+            <p>PetLog는 진단이나 처방을 제공하는 서비스가 아닙니다. 의료 판단을 대신하는 AI가 아니라, 보호자가 병원비와 지출 기록을 더 쉽게 이해하도록 돕는 기록 도구입니다.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="compare-section">
+    <div class="container">
+      <div class="compare-grid">
+        <div class="fade-up">
+          <h2
+            style="font-size: clamp(1.75rem, 4vw, 3rem); font-weight: 900; margin-bottom: 1.5rem; line-height: 1.2; word-break: keep-all;">
+            영수증은 복잡하지만,<br>기억은 쉬워야 하니까.</h2>
+          <p style="font-size: clamp(0.9375rem, 1.5vw, 1.25rem); color: var(--text-sub); margin-bottom: 2.5rem;">숫자로만 남는
+            지출을 보호자가 이해할 수 있는 기록으로 바꿉니다.</p>
+          <div class="small-feature-grid" style="justify-content: flex-start;">
+            <div class="small-feature-pill">진료비 분류</div>
+            <div class="small-feature-pill">약제비 정리</div>
+            <div class="small-feature-pill">처치비 요약</div>
+          </div>
+        </div>
+        <div class="compare-visual fade-up" style="transition-delay: 200ms;">
+          <div class="compare-img" id="compare-before"
+            style="background: #E5E8EB; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; color: #8B95A1; border-radius: 32px;">
+            복잡한 영수증 (Before)</div>
+          <div class="compare-img" id="compare-after"
+            style="background: white; opacity: 0; display: flex; align-items: center; justify-content: center; border-radius: 32px;">
+            <div class="app-card receipt-breakdown-ui" style="width: 85%; box-shadow: 0 40px 80px rgba(0,0,0,0.1);">
+              <div class="ai-badge-mint">📊 분석 초안</div>
+              <div style="font-size: 22px; font-weight: 900; margin-bottom: 4px;">다솜동물병원</div>
+              <div style="font-size: 14px; color: var(--text-muted); font-weight: 600; margin-bottom: 12px;">2026.05.11
+                • 지출 완료</div>
+              <div class="divider-thin"></div>
+              <div class="breakdown-item">
+                <span class="item-label">🩺 일반진료</span>
+                <span class="item-price">20,000원</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="item-label">💊 항생제 처방</span>
+                <span class="item-price">12,000원</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="item-label">✨ 회복 모니터링</span>
+                <span class="item-price">14,000원</span>
+              </div>
+              <div class="divider-thin"></div>
+              <div class="breakdown-item" style="margin-top: 4px;">
+                <span style="font-weight: 900; font-size: 18px;">합계</span>
+                <span style="font-weight: 900; font-size: 18px; color: var(--brand-primary);">46,000원</span>
+              </div>
+            </div>
+          </div>
+          <div class="compare-overlay">
+            <div id="compare-label" style="font-weight: 900; font-size: 1.5rem;">스크롤하여 차이를 확인하세요</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="sticky-container">
+      <div class="story-text-box">
+        <div class="story-step active">
+          <div style="color: var(--brand-primary); font-weight: 900; font-size: 0.875rem; margin-bottom: 0.75rem;">STEP
+            1</div>
+          <h2 style="font-weight: 900; margin-bottom: 0.875rem;">영수증을 촬영하세요</h2>
+          <p style="color: var(--text-sub);">동물병원 영수증이나 반려동물 지출 내역을 입력합니다.</p>
+        </div>
+        <div class="story-step">
+          <div style="color: var(--brand-primary); font-weight: 900; font-size: 0.875rem; margin-bottom: 0.75rem;">STEP
+            2</div>
+          <h2 style="font-weight: 900; margin-bottom: 0.875rem;">AI가 초안을 정리합니다</h2>
+          <p style="color: var(--text-sub);">항목, 금액, 카테고리를 보기 쉽게 정리합니다.</p>
+        </div>
+        <div class="story-step">
+          <div style="color: var(--brand-primary); font-weight: 900; font-size: 0.875rem; margin-bottom: 0.75rem;">STEP
+            3</div>
+          <h2 style="font-weight: 900; margin-bottom: 0.875rem;">보호자가 확인 후 저장</h2>
+          <p style="color: var(--text-sub);">AI 분석은 참고용이며, 최종 기록은 보호자가 확인합니다.</p>
+        </div>
+      </div>
+      <div class="premium-phone">
+        <div class="premium-screen" style="background:#F7F8FA; overflow:hidden; position:relative;">
+
+          <!-- SCREEN 1: Camera / Scan -->
+          <div class="story-screen active" id="ss-1"
+            style="position:absolute;inset:0;display:flex;flex-direction:column;background:#111;transition:opacity 0.6s,transform 0.6s;">
+            <!-- Viewfinder -->
+            <div style="flex:1;position:relative;display:flex;align-items:center;justify-content:center;">
+              <!-- Dark overlay corners -->
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.55);"></div>
+              <!-- Receipt mock -->
+              <div
+                style="position:relative;z-index:2;width:200px;background:white;border-radius:10px;padding:16px;box-shadow:0 0 40px rgba(0,0,0,0.5);">
+                <div style="font-size:10px;font-weight:800;color:#8B95A1;margin-bottom:8px;text-align:center;">다솜동물병원
+                </div>
+                <div style="height:7px;background:#eee;border-radius:4px;margin-bottom:6px;width:90%;"></div>
+                <div style="height:7px;background:#eee;border-radius:4px;margin-bottom:6px;width:60%;"></div>
+                <div style="height:7px;background:#eee;border-radius:4px;margin-bottom:10px;width:75%;"></div>
+                <div
+                  style="border-top:1px dashed #ddd;padding-top:8px;display:flex;justify-content:space-between;font-size:10px;font-weight:800;">
+                  <span>합계</span><span>46,000원</span>
+                </div>
+              </div>
+              <!-- Scan line -->
+              <div class="scan-line"></div>
+              <!-- Corner brackets -->
+              <div
+                style="position:absolute;z-index:3;top:20px;left:28px;width:28px;height:28px;border-top:3px solid #11C5A5;border-left:3px solid #11C5A5;border-radius:4px 0 0 0;">
+              </div>
+              <div
+                style="position:absolute;z-index:3;top:20px;right:28px;width:28px;height:28px;border-top:3px solid #11C5A5;border-right:3px solid #11C5A5;border-radius:0 4px 0 0;">
+              </div>
+              <div
+                style="position:absolute;z-index:3;bottom:20px;left:28px;width:28px;height:28px;border-bottom:3px solid #11C5A5;border-left:3px solid #11C5A5;border-radius:0 0 0 4px;">
+              </div>
+              <div
+                style="position:absolute;z-index:3;bottom:20px;right:28px;width:28px;height:28px;border-bottom:3px solid #11C5A5;border-right:3px solid #11C5A5;border-radius:0 0 4px 0;">
+              </div>
+            </div>
+            <!-- Bottom bar -->
+            <div
+              style="background:#1A1A1A;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;">
+              <div style="width:44px;height:44px;border-radius:50%;border:2px solid #444;"></div>
+              <div
+                style="width:60px;height:60px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px rgba(255,255,255,0.15);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                  <circle cx="12" cy="13" r="4" />
+                </svg>
+              </div>
+              <div style="width:44px;height:44px;border-radius:50%;border:2px solid #444;"></div>
+            </div>
+            <div style="background:#1A1A1A;padding:4px 0 10px;text-align:center;">
+              <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.6);">영수증을 프레임 안에 맞춰주세요</span>
+            </div>
+          </div>
+
+          <!-- SCREEN 2: AI Analysis -->
+          <div class="story-screen" id="ss-2"
+            style="position:absolute;inset:0;display:flex;flex-direction:column;background:#F7F8FA;opacity:0;transform:translateX(100%);transition:opacity 0.6s,transform 0.6s;">
+            <!-- Header -->
+            <div
+              style="background:white;padding:14px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #F2F4F6;flex-shrink:0;">
+              <div
+                style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#11C5A5,#0D9E85);display:flex;align-items:center;justify-content:center;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+                </svg>
+              </div>
+              <span style="font-size:14px;font-weight:800;color:#191F28;">AI 분석 중...</span>
+              <div class="pulse-dot"
+                style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:#11C5A5;"></div>
+            </div>
+            <!-- Progress -->
+            <div style="padding:16px 18px 8px;flex-shrink:0;">
+              <div style="font-size:11px;font-weight:700;color:#8B95A1;margin-bottom:6px;">분석 진행률</div>
+              <div style="height:6px;background:#F2F4F6;border-radius:3px;overflow:hidden;">
+                <div class="ai-progress-bar"
+                  style="height:100%;width:0%;background:linear-gradient(90deg,#11C5A5,#4DE2C8);border-radius:3px;transition:width 2s ease;">
+                </div>
+              </div>
+            </div>
+            <!-- Items appearing -->
+            <div style="padding:8px 18px;flex:1;">
+              <div class="ai-item ai-item-1"
+                style="background:white;border-radius:14px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);opacity:0;transform:translateX(20px);transition:all 0.5s ease;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div
+                    style="width:28px;height:28px;background:#FFF0F0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;">
+                    🩺</div>
+                  <span style="font-size:12px;font-weight:700;color:#333D4B;">일반진료</span>
+                </div>
+                <span style="font-size:12px;font-weight:800;color:#191F28;">20,000원</span>
+              </div>
+              <div class="ai-item ai-item-2"
+                style="background:white;border-radius:14px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);opacity:0;transform:translateX(20px);transition:all 0.5s ease 0.3s;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div
+                    style="width:28px;height:28px;background:#F0F8FF;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;">
+                    💊</div>
+                  <span style="font-size:12px;font-weight:700;color:#333D4B;">항생제 처방</span>
+                </div>
+                <span style="font-size:12px;font-weight:800;color:#191F28;">12,000원</span>
+              </div>
+              <div class="ai-item ai-item-3"
+                style="background:white;border-radius:14px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);opacity:0;transform:translateX(20px);transition:all 0.5s ease 0.6s;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div
+                    style="width:28px;height:28px;background:#F0FBF8;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;">
+                    ✨</div>
+                  <span style="font-size:12px;font-weight:700;color:#333D4B;">회복 모니터링</span>
+                </div>
+                <span style="font-size:12px;font-weight:800;color:#191F28;">14,000원</span>
+              </div>
+              <div class="ai-item ai-item-4"
+                style="background:#F0FBF8;border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(17,197,165,0.2);opacity:0;transform:translateX(20px);transition:all 0.5s ease 0.9s;">
+                <span style="font-size:13px;font-weight:900;color:#191F28;">합계</span>
+                <span style="font-size:14px;font-weight:900;color:#11C5A5;">46,000원</span>
+              </div>
+            </div>
+            <div style="padding:8px 18px 12px;flex-shrink:0;">
+              <div style="font-size:9.5px;color:#8B95A1;text-align:center;">* AI 분석은 참고용이며 진단·처방을 제공하지 않습니다.</div>
+            </div>
+          </div>
+
+          <!-- SCREEN 3: Confirm & Save -->
+          <div class="story-screen" id="ss-3"
+            style="position:absolute;inset:0;display:flex;flex-direction:column;background:#F7F8FA;opacity:0;transform:translateX(100%);transition:opacity 0.6s,transform 0.6s;">
+            <!-- Header -->
+            <div
+              style="background:white;padding:14px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #F2F4F6;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E5968" stroke-width="2.3">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+              <span style="font-size:14px;font-weight:800;color:#191F28;">기록 확인</span>
+              <div style="margin-left:auto;font-size:11px;font-weight:700;color:#11C5A5;">보호자 확인 필요</div>
+            </div>
+            <!-- Card -->
+            <div style="padding:14px;flex:1;">
+              <div
+                style="background:white;border-radius:20px;padding:18px;box-shadow:0 4px 20px rgba(0,0,0,0.06);margin-bottom:12px;">
+                <div
+                  style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #F2F4F6;">
+                  <div
+                    style="width:40px;height:40px;background:#F0FBF8;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;">
+                    🏥</div>
+                  <div>
+                    <div style="font-size:13px;font-weight:900;color:#191F28;">다솜동물병원</div>
+                    <div style="font-size:10px;color:#8B95A1;font-weight:600;">2026.05.11 • 호두</div>
+                  </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span
+                    style="font-size:11.5px;color:#4E5968;font-weight:600;">🩺 일반진료</span><span
+                    style="font-size:11.5px;font-weight:800;">20,000원</span></div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span
+                    style="font-size:11.5px;color:#4E5968;font-weight:600;">💊 항생제 처방</span><span
+                    style="font-size:11.5px;font-weight:800;">12,000원</span></div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:12px;"><span
+                    style="font-size:11.5px;color:#4E5968;font-weight:600;">✨ 회복 모니터링</span><span
+                    style="font-size:11.5px;font-weight:800;">14,000원</span></div>
+                <div style="border-top:1px solid #F2F4F6;padding-top:10px;display:flex;justify-content:space-between;">
+                  <span style="font-size:13px;font-weight:900;">합계</span>
+                  <span style="font-size:14px;font-weight:900;color:#11C5A5;">46,000원</span>
+                </div>
+              </div>
+              <!-- Disclaimer -->
+              <div
+                style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:12px;padding:10px 12px;margin-bottom:12px;">
+                <div style="font-size:10px;font-weight:700;color:#92400E;line-height:1.5;">원본 영수증과 내용을 반드시 대조 확인 후
+                  저장해주세요.</div>
+              </div>
+              <!-- Save button -->
+              <div
+                style="background:linear-gradient(135deg,#11C5A5,#0D9E85);border-radius:16px;padding:14px;text-align:center;box-shadow:0 8px 24px rgba(17,197,165,0.3);cursor:pointer;">
+                <span style="font-size:14px;font-weight:900;color:white;">✓ 확인하고 저장하기</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step dots indicator -->
+          <div
+            style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;">
+            <div class="story-dot active" id="dot-1"
+              style="width:20px;height:6px;border-radius:3px;background:#11C5A5;transition:all 0.4s;"></div>
+            <div class="story-dot" id="dot-2"
+              style="width:6px;height:6px;border-radius:3px;background:#D1D5DB;transition:all 0.4s;"></div>
+            <div class="story-dot" id="dot-3"
+              style="width:6px;height:6px;border-radius:3px;background:#D1D5DB;transition:all 0.4s;"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="feature-showcase">
+    <div class="container">
+      <h2 class="fade-up text-center"
+        style="font-size: clamp(1.75rem, 3.5vw, 3.25rem); font-weight: 900; margin-bottom: 3.5rem; line-height: 1.2; word-break: keep-all;">
+        기록은 숫자로 남고,<br>이해는 기억으로 남습니다.</h2>
+      <div class="big-feature-grid">
+        <div class="big-feature-card fade-up">
+          <div style="font-size: 40px; margin-bottom: 2rem;">🧠</div>
+          <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem;">AI 영수증 분석</h3>
+          <p style="color: var(--text-sub);">영수증을 촬영하면 항목과 금액을 초안으로 정리합니다.</p>
+        </div>
+        <div class="big-feature-card fade-up" style="transition-delay: 200ms;">
+          <div style="font-size: 40px; margin-bottom: 2rem;">🐶</div>
+          <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem;">반려동물별 지출 기록</h3>
+          <p style="color: var(--text-sub);">아이별로 병원비와 생활 지출을 나누어 관리할 수 있습니다.</p>
+        </div>
+        <div class="big-feature-card fade-up" style="transition-delay: 400ms;">
+          <div style="font-size: 40px; margin-bottom: 2rem;">📊</div>
+          <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem;">월간 지출 브리핑</h3>
+          <p style="color: var(--text-sub);">매달 우리 아이를 위해 어디에 지출했는지 한눈에 보여드려요.</p>
+        </div>
+      </div>
+      <div class="small-feature-grid fade-up">
+        <div class="small-feature-pill">📁 의료비 카테고리 정리</div>
+        <div class="small-feature-pill">📝 케어 기록 후보</div>
+        <div class="small-feature-pill">🖨️ PDF 저장 및 인쇄</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="beta">
+    <!-- Decorative background -->
+    <div class="cta-bg-layer">
+      <div class="cta-glow cta-glow-1"></div>
+      <div class="cta-glow cta-glow-2"></div>
+      <!-- Paw pattern -->
+      <div class="paw-pattern" aria-hidden="true">
+        <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+        <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+        <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+      </div>
+    </div>
+
+    <div class="container cta-layout">
+      <!-- Left: Text -->
+      <div class="cta-text fade-up">
+        <div class="cta-eyebrow">
+          <img src="./assets/logo.PNG" alt="PetLog"
+            style="width:28px;height:28px;border-radius:8px;object-fit:cover;vertical-align:middle;">
+          <span>PetLog Beta</span>
+        </div>
+        <h2 class="cta-heading">우리 아이의 기록,<br>이제 쉽게 시작하세요.</h2>
+        <p class="cta-sub">영수증은 복잡해도,<br>기록은 쉬워야 하니까.</p>
+        <a href="https://forms.gle/BroTa5oyXdejbPEA6" target="_blank" rel="noopener" class="btn-cta-white">무료 베타 시작하기 →</a>
+        <p class="cta-disclaimer">* AI 분석은 참고용이며 진단·처방을 제공하지 않습니다.</p>
+      </div>
+
+      <!-- Right: Floating visual cards -->
+      <div class="cta-visual fade-up" style="transition-delay:200ms;">
+
+        <!-- Review card -->
+        <div class="cta-card cta-card-review">
+          <div style="display:flex;gap:3px;margin-bottom:10px;">
+            <span style="color:#FFB800;font-size:14px;">★★★★★</span>
+          </div>
+          <p style="font-size:14px;font-weight:600;color:#191F28;line-height:1.6;margin-bottom:12px;">"병원 갔다 오면 영수증 어디다
+            뒀는지 맨날 까먹었는데, 이제 찍으면 바로 정리되니까 너무 편해요."</p>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div
+              style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#FFD6CC,#FFA58C);display:flex;align-items:center;justify-content:center;font-size:16px;">
+              🐶</div>
+            <div>
+              <div style="font-size:12px;font-weight:800;color:#191F28;">호두 보호자</div>
+              <div style="font-size:11px;color:#8B95A1;">베타 테스터</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pet spending card -->
+        <div class="cta-card cta-card-spend">
+          <div style="font-size:11px;font-weight:700;color:#8B95A1;margin-bottom:4px;">이번 달 반려동물 지출</div>
+          <div style="font-size:26px;font-weight:900;color:#191F28;letter-spacing:-0.03em;margin-bottom:14px;">
+            124,000<span style="font-size:15px;">원</span></div>
+          <div style="display:flex;gap:8px;">
+            <div style="flex:1;background:#F7F8FA;border-radius:12px;padding:10px;text-align:center;">
+              <div style="font-size:16px;margin-bottom:3px;">🐶</div>
+              <div style="font-size:10px;font-weight:700;color:#4E5968;">호두</div>
+              <div style="font-size:11px;font-weight:800;margin-top:2px;">46,000원</div>
+            </div>
+            <div style="flex:1;background:#F7F8FA;border-radius:12px;padding:10px;text-align:center;">
+              <div style="font-size:16px;margin-bottom:3px;">🐱</div>
+              <div style="font-size:10px;font-weight:700;color:#4E5968;">나나</div>
+              <div style="font-size:11px;font-weight:800;margin-top:2px;">78,000원</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI badge floating -->
+        <div class="cta-card cta-card-ai">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div
+              style="width:36px;height:36px;background:linear-gradient(135deg,#11C5A5,#0D9E85);border-radius:12px;display:flex;align-items:center;justify-content:center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:12px;font-weight:800;color:#191F28;">영수증 분석 완료</div>
+              <div style="font-size:11px;color:#11C5A5;font-weight:600;">✓ 기록 초안 준비됨</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <!-- Top row: brand + tagline -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo-link">
+            <img src="./assets/logo.PNG" alt="PetLog"
+              style="width:36px;height:36px;border-radius:10px;object-fit:cover;">
+            <span>PetLog</span>
+          </a>
+          <p class="footer-tagline">영수증은 복잡하지만,<br>기록은 쉬워야 하니까.</p>
+          <p class="footer-desc">반려동물 병원비와 지출을<br>보호자가 이해하기 쉬운 기록으로 정리합니다.</p>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="footer-divider"></div>
+
+      <!-- Legal disclaimer -->
+      <div class="footer-legal">
+        <p>AI 분석은 참고용이며, 진단이나 처방을 제공하지 않습니다.<br>정확한 케어 판단은 동물병원 안내를 따라주세요.</p>
+      </div>
+
+      <!-- Bottom row: nav + copyright -->
+      <div class="footer-bottom">
+        <nav class="footer-nav">
+          <a href="#">서비스 소개</a>
+          <span class="footer-dot">·</span>
+          <a href="https://forms.gle/BroTa5oyXdejbPEA6" target="_blank" rel="noopener">무료 베타</a>
+          <span class="footer-dot">·</span>
+          <a href="#">AI 안내</a>
+        </nav>
+        <p class="footer-copy">© 2026 PetLog. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
