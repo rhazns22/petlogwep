@@ -12,7 +12,7 @@
   let rafId;
 
   // Interactive elements that trigger hover state
-  const HOVER_SELECTORS = 'a, button, [role="button"], .btn-premium, .btn-cta-white, .header-nav-btn, .small-feature-pill, .big-feature-card, .cta-card, .footer-nav a';
+  const HOVER_SELECTORS = 'a, button, [role="button"], .btn-premium, .btn-cta-white, .header-nav-btn, .small-feature-pill, .big-feature-card, .cta-card, .footer-nav a, .problem-card, .persona-card, .ai-usage-card, .prompt-card, .tech-card, .hitl-box, .flow-node';
 
   document.addEventListener('mousemove', e => {
     mouseX = e.clientX;
@@ -134,63 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 6. Sticky Story Logic — Rich 3-Screen
-  const storySection = document.querySelector(".story-section");
-  const steps        = document.querySelectorAll(".story-step");
-  const screens      = [
-    document.getElementById("ss-1"),
-    document.getElementById("ss-2"),
-    document.getElementById("ss-3"),
-  ];
-  const dots = [
-    document.getElementById("dot-1"),
-    document.getElementById("dot-2"),
-    document.getElementById("dot-3"),
-  ];
-
-  let currentScreen = 0;
-
-  function activateScreen(idx) {
-    if (idx === currentScreen) return;
-    // exit old
-    screens[currentScreen].classList.remove("active");
-    screens[currentScreen].classList.add("exit");
-    dots[currentScreen].classList.remove("active");
-    dots[currentScreen].style.width = "6px";
-    dots[currentScreen].style.background = "#D1D5DB";
-
-    currentScreen = idx;
-
-    // enter new
-    screens[currentScreen].classList.remove("exit");
-    screens[currentScreen].classList.add("active");
-    dots[currentScreen].classList.add("active");
-    dots[currentScreen].style.width = "20px";
-    dots[currentScreen].style.background = "#11C5A5";
-
-    // Trigger Screen 2 animations
-    if (idx === 1) {
-      const bar = document.querySelector(".ai-progress-bar");
-      if (bar) { bar.style.width = "0%"; setTimeout(() => { bar.style.width = "85%"; }, 100); }
-      document.querySelectorAll(".ai-item").forEach(el => {
-        el.style.opacity = "0"; el.style.transform = "translateX(20px)";
-        setTimeout(() => { el.style.opacity = "1"; el.style.transform = "translateX(0)"; }, 200);
-      });
-    }
-  }
-
-  window.addEventListener("scroll", () => {
-    if (!storySection) return;
-    const rect     = storySection.getBoundingClientRect();
-    const winH     = window.innerHeight;
-    const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - winH)));
-    const stepIdx  = Math.min(steps.length - 1, Math.floor(progress * steps.length));
-
-    steps.forEach((step, i) => {
-      step.classList.toggle("active", i === stepIdx);
-    });
-
-    activateScreen(stepIdx);
-  });
+  // 6. Sticky Story Logic - Removed in favor of Pipeline Diagram
 });
 

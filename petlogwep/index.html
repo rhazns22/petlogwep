@@ -26,8 +26,17 @@
         <img src="./assets/logo.PNG" alt="PetLog" style="width:36px;height:36px;border-radius:10px;object-fit:cover;">
         <span>PetLog</span>
       </a>
-      <nav class="header-nav">
+      <nav class="header-nav header-nav-pc">
         <a href="#why" class="header-nav-link">만든 이유</a>
+        <a href="#problem-solved" class="header-nav-link">해결 문제</a>
+        <a href="#flowchart" class="header-nav-link">사용 흐름</a>
+        <a href="#ai-usage" class="header-nav-link">AI 활용</a>
+        <a href="https://forms.gle/BroTa5oyXdejbPEA6" target="_blank" rel="noopener" class="header-nav-btn">무료 베타</a>
+      </nav>
+      <nav class="header-nav header-nav-mobile">
+        <a href="#why" class="header-nav-link">만든 이유</a>
+        <a href="#feature-showcase" class="header-nav-link">기능</a>
+        <a href="#ai-usage" class="header-nav-link">AI 안내</a>
         <a href="https://forms.gle/BroTa5oyXdejbPEA6" target="_blank" rel="noopener" class="header-nav-btn">무료 베타</a>
       </nav>
     </div>
@@ -263,6 +272,83 @@
 
     </div>
   </section>
+  
+  <!-- ── Section: Problem Solved ── -->
+  <section class="section problem-solved" id="problem-solved">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="why-eyebrow">해결하는 문제</div>
+        <h2 class="why-heading">우린 무엇을 해결하나요?</h2>
+        <p class="why-body" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+          PetLog는 반려동물 병원비를 단순히 기록하는 것을 넘어,<br>보호자가 이해하기 어려웠던 영수증을 정리 가능한 데이터로 바꾸는 데 집중합니다.
+        </p>
+      </div>
+      
+      <div class="problem-grid fade-up">
+        <div class="problem-card">
+          <div class="problem-card-icon">📄</div>
+          <h3>복잡한 병원 영수증</h3>
+          <p>진료비, 검사비, 처치비, 약제비처럼 항목은 많지만 보호자가 한눈에 이해하기 어려운 경우가 많습니다.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-icon">🧠</div>
+          <h3>기억에 의존하는 케어 기록</h3>
+          <p>진료 후 복약, 재진, 회복 체크 안내를 들었지만 시간이 지나면 놓치기 쉽습니다.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-icon">🐾</div>
+          <h3>반려동물별 지출 관리 어려움</h3>
+          <p>여러 마리를 키우는 경우 어떤 아이에게 어떤 비용이 발생했는지 따로 관리하기 어렵습니다.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-icon">📈</div>
+          <h3>기록은 있는데 해석이 어려움</h3>
+          <p>단순 금액 기록만으로는 이번 달 지출 흐름이나 병원비 비중을 파악하기 어렵습니다.</p>
+        </div>
+      </div>
+      
+      <div class="text-center fade-up" style="margin-top: 4rem;">
+        <p class="highlight-text">“PetLog는 이 문제를 AI 초안 정리, 보호자 확인, 반려동물별 기록 저장 흐름으로 해결합니다.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section: Persona ── -->
+  <section class="section persona" id="persona">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="why-eyebrow">페르소나</div>
+        <h2 class="why-heading">이런 보호자를 위해 만들었습니다</h2>
+        <p class="why-body" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+          PetLog의 핵심 사용자는 병원비를 기록하고 싶지만,<br>영수증과 케어 내용을 따로 관리하기 어려웠던 보호자입니다.
+        </p>
+      </div>
+
+      <div class="persona-grid fade-up">
+        <div class="persona-card">
+          <div class="persona-tag">Persona 1</div>
+          <h3>초보 반려인</h3>
+          <div class="persona-item"><strong>상황:</strong> 처음 동물병원에 다녀온 뒤 영수증 항목이 낯설고 어렵게 느껴집니다.</div>
+          <div class="persona-item"><strong>필요:</strong> 어떤 비용이 어떤 항목인지 쉽게 정리된 기록이 필요합니다.</div>
+          <div class="persona-footer"><strong>PetLog 역할:</strong> AI가 항목과 금액을 초안으로 정리하고, 보호자가 확인 후 저장할 수 있게 돕습니다.</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-tag">Persona 2</div>
+          <h3>다견·다묘 보호자</h3>
+          <div class="persona-item"><strong>상황:</strong> 여러 반려동물의 병원비와 생활 지출이 섞여 관리됩니다.</div>
+          <div class="persona-item"><strong>필요:</strong> 아이별로 지출 기록을 나누어 관리하고 싶습니다.</div>
+          <div class="persona-footer"><strong>PetLog 역할:</strong> 반려동물별 지출 기록과 월간 지출 흐름을 확인할 수 있게 돕습니다.</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-tag">Persona 3</div>
+          <h3>진료 후 기록을 놓치기 쉬운 보호자</h3>
+          <div class="persona-item"><strong>상황:</strong> 병원에서 복약이나 재진 안내를 들었지만, 집에 오면 기억이 흐려집니다.</div>
+          <div class="persona-item"><strong>필요:</strong> 병원 안내를 받은 내용을 기록으로 남길 공간이 필요합니다.</div>
+          <div class="persona-footer"><strong>PetLog 역할:</strong> 복약, 재진, 회복 체크 일정이 있다면 케어 기록 후보로 남길 수 있게 돕습니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="compare-section">
     <div class="container">
@@ -318,223 +404,427 @@
     </div>
   </section>
 
-  <section class="story-section">
-    <div class="sticky-container">
-      <div class="story-text-box">
-        <div class="story-step active">
-          <div style="color: var(--brand-primary); font-weight: 900; font-size: 0.875rem; margin-bottom: 0.75rem;">STEP
-            1</div>
-          <h2 style="font-weight: 900; margin-bottom: 0.875rem;">영수증을 촬영하세요</h2>
-          <p style="color: var(--text-sub);">동물병원 영수증이나 반려동물 지출 내역을 입력합니다.</p>
-        </div>
-        <div class="story-step">
-          <div style="color: var(--brand-primary); font-weight: 900; font-size: 0.875rem; margin-bottom: 0.75rem;">STEP
-            2</div>
-          <h2 style="font-weight: 900; margin-bottom: 0.875rem;">AI가 초안을 정리합니다</h2>
-          <p style="color: var(--text-sub);">항목, 금액, 카테고리를 보기 쉽게 정리합니다.</p>
-        </div>
-        <div class="story-step">
-          <div style="color: var(--brand-primary); font-weight: 900; font-size: 0.875rem; margin-bottom: 0.75rem;">STEP
-            3</div>
-          <h2 style="font-weight: 900; margin-bottom: 0.875rem;">보호자가 확인 후 저장</h2>
-          <p style="color: var(--text-sub);">AI 분석은 참고용이며, 최종 기록은 보호자가 확인합니다.</p>
+  <!-- ── Section: AI Analysis Flowchart ── -->
+  <!-- ── Section: AI Analysis Pipeline ── -->
+  <section class="pipeline-section" id="pipeline">
+    <div class="container">
+  <!-- Area 1: Header Area -->
+      <div class="text-center pipeline-intro">
+        <div class="why-eyebrow">Confirmed Data Pipeline</div>
+        <h2 class="why-heading">AI 초안과 사용자 확정 데이터를 분리한 신뢰성 설계</h2>
+        <p class="why-body" style="max-width: 900px; margin: 0 auto 1.5rem; font-size: 1.15rem; line-height: 1.7;">
+          PetLog는 AI 분석 결과를 바로 저장하지 않습니다. Gemini가 생성한 영수증 분석 결과는 먼저 `draft` 상태의 AI 초안으로 표시되고, 보호자가 금액과 항목을 직접 확인·수정한 뒤 최종 데이터로 저장됩니다. 이 구조를 통해 AI 분석의 편의성은 유지하면서도, 실제 서비스 데이터의 신뢰도를 높였습니다.
+        </p>
+        
+        <div class="tech-badges" style="justify-content: center; margin-top: 2rem;">
+          <span class="tech-badge">Gemini OCR</span>
+          <span class="tech-badge">Image Preprocessing</span>
+          <span class="tech-badge">Validation Layer</span>
+          <span class="tech-badge">Human-in-the-loop</span>
+          <span class="tech-badge">Confirmed Data</span>
+          <span class="tech-badge">Monthly Insight</span>
         </div>
       </div>
-      <div class="premium-phone">
-        <div class="premium-screen" style="background:#F7F8FA; overflow:hidden; position:relative;">
 
-          <!-- SCREEN 1: Camera / Scan -->
-          <div class="story-screen active" id="ss-1"
-            style="position:absolute;inset:0;display:flex;flex-direction:column;background:#111;transition:opacity 0.6s,transform 0.6s;">
-            <!-- Viewfinder -->
-            <div style="flex:1;position:relative;display:flex;align-items:center;justify-content:center;">
-              <!-- Dark overlay corners -->
-              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.55);"></div>
-              <!-- Receipt mock -->
-              <div
-                style="position:relative;z-index:2;width:200px;background:white;border-radius:10px;padding:16px;box-shadow:0 0 40px rgba(0,0,0,0.5);">
-                <div style="font-size:10px;font-weight:800;color:#8B95A1;margin-bottom:8px;text-align:center;">다솜동물병원
-                </div>
-                <div style="height:7px;background:#eee;border-radius:4px;margin-bottom:6px;width:90%;"></div>
-                <div style="height:7px;background:#eee;border-radius:4px;margin-bottom:6px;width:60%;"></div>
-                <div style="height:7px;background:#eee;border-radius:4px;margin-bottom:10px;width:75%;"></div>
-                <div
-                  style="border-top:1px dashed #ddd;padding-top:8px;display:flex;justify-content:space-between;font-size:10px;font-weight:800;">
-                  <span>합계</span><span>46,000원</span>
-                </div>
-              </div>
-              <!-- Scan line -->
-              <div class="scan-line"></div>
-              <!-- Corner brackets -->
-              <div
-                style="position:absolute;z-index:3;top:20px;left:28px;width:28px;height:28px;border-top:3px solid #11C5A5;border-left:3px solid #11C5A5;border-radius:4px 0 0 0;">
-              </div>
-              <div
-                style="position:absolute;z-index:3;top:20px;right:28px;width:28px;height:28px;border-top:3px solid #11C5A5;border-right:3px solid #11C5A5;border-radius:0 4px 0 0;">
-              </div>
-              <div
-                style="position:absolute;z-index:3;bottom:20px;left:28px;width:28px;height:28px;border-bottom:3px solid #11C5A5;border-left:3px solid #11C5A5;border-radius:0 0 0 4px;">
-              </div>
-              <div
-                style="position:absolute;z-index:3;bottom:20px;right:28px;width:28px;height:28px;border-bottom:3px solid #11C5A5;border-right:3px solid #11C5A5;border-radius:0 0 4px 0;">
-              </div>
-            </div>
-            <!-- Bottom bar -->
-            <div
-              style="background:#1A1A1A;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;">
-              <div style="width:44px;height:44px;border-radius:50%;border:2px solid #444;"></div>
-              <div
-                style="width:60px;height:60px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px rgba(255,255,255,0.15);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                  <circle cx="12" cy="13" r="4" />
-                </svg>
-              </div>
-              <div style="width:44px;height:44px;border-radius:50%;border:2px solid #444;"></div>
-            </div>
-            <div style="background:#1A1A1A;padding:4px 0 10px;text-align:center;">
-              <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.6);">영수증을 프레임 안에 맞춰주세요</span>
-            </div>
+      <!-- Area 2: Main Pipeline Area (3x2 Grid) -->
+      <div class="pipeline-main-wrap">
+        <div class="pipeline-main-grid">
+          <!-- 01 -->
+          <div class="pipeline-main-card">
+            <div class="step-num">01</div>
+            <h3>Receipt Input</h3>
+            <p>영수증 이미지를 업로드하거나 지출 내역을 직접 입력합니다.</p>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <!-- 02 -->
+          <div class="pipeline-main-card">
+            <div class="step-num">02</div>
+            <h3>Image Preprocessing</h3>
+            <p>이미지를 분석 가능한 크기로 최적화하고 AI 요청 형태로 변환합니다.</p>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <!-- 03 -->
+          <div class="pipeline-main-card">
+            <div class="step-num">03</div>
+            <h3>AI OCR / Gemini Analysis</h3>
+            <p>병원명, 날짜, 총액, 항목명, 항목별 금액을 `draft` 초안으로 추출합니다.</p>
           </div>
 
-          <!-- SCREEN 2: AI Analysis -->
-          <div class="story-screen" id="ss-2"
-            style="position:absolute;inset:0;display:flex;flex-direction:column;background:#F7F8FA;opacity:0;transform:translateX(100%);transition:opacity 0.6s,transform 0.6s;">
-            <!-- Header -->
-            <div
-              style="background:white;padding:14px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #F2F4F6;flex-shrink:0;">
-              <div
-                style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#11C5A5,#0D9E85);display:flex;align-items:center;justify-content:center;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-                  <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
-                </svg>
-              </div>
-              <span style="font-size:14px;font-weight:800;color:#191F28;">AI 분석 중...</span>
-              <div class="pulse-dot"
-                style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:#11C5A5;"></div>
+          <!-- Row Transition Label -->
+          <div class="pipeline-row-label"><span>검증 및 사용자 확정 단계로 이동</span></div>
+
+          <!-- 04 -->
+          <div class="pipeline-main-card">
+            <div class="step-num">04</div>
+            <h3>Validation Layer</h3>
+            <p>총액, 할인, 세금 정보를 검증해 AI 분석 결과의 신뢰도를 보완합니다.</p>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <!-- 05 -->
+          <div class="pipeline-main-card">
+            <div class="step-num">05</div>
+            <h3>Human Review</h3>
+            <p>AI 결과는 자동 확정되지 않으며 보호자가 직접 확인하고 수정할 수 있습니다.</p>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <!-- 06 -->
+          <div class="pipeline-main-card">
+            <div class="step-num">06</div>
+            <h3>Confirmed Data Save</h3>
+            <p>사용자가 최종 승인한 데이터만 정제된 지출 기록으로 저장됩니다.</p>
+          </div>
+        </div>
+
+        <!-- Technical Wow Callouts -->
+        <div class="wow-callouts">
+          <div class="wow-pill">
+            <strong>Human-in-the-loop</strong>
+            <span>AI 분석 결과를 바로 저장하지 않고, 보호자 확인 단계를 거쳐 확정 데이터만 저장하여 서비스 신뢰도를 확보했습니다.</span>
+          </div>
+          <div class="wow-pill">
+            <strong>Validation Layer</strong>
+            <span>총액, 할인, 세금 정보를 검증 엔진이 교차 체크하여 영수증 분석 오류 가능성을 최소화하도록 설계했습니다.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Area 3: Exception Handling Area -->
+      <div class="exception-area">
+        <h3 class="area-title">예외 처리는 어떻게 설계했나요?</h3>
+        <div class="exception-grid">
+          <div class="exception-card">
+            <div class="ex-badge">Fallback</div>
+            <h4>분석이 어려운 경우</h4>
+            <p>이미지 품질이 낮거나 필수 정보가 부족하면 AI 결과를 무리하게 확정하지 않고 수기 입력으로 전환합니다.</p>
+          </div>
+          <div class="exception-card">
+            <div class="ex-badge">Human Review</div>
+            <h4>수정이 필요한 경우</h4>
+            <p>보호자가 항목, 금액, 카테고리를 직접 수정한 뒤 저장 전 다시 확인할 수 있도록 설계했습니다.</p>
+          </div>
+          <div class="exception-card">
+            <div class="ex-badge" style="background: #e9ecef; color: #495057;">Safety Guard</div>
+            <h4>의료 판단 방지</h4>
+            <p>AI는 진단이나 처방을 생성하지 않고, 지출 기록 초안과 참고용 브리핑만 제공하여 규제를 준수합니다.</p>
+          </div>
+        </div>
+        <div class="wow-callouts" style="margin-top: 1.5rem;">
+          <div class="wow-pill">
+            <strong>Fallback 설계</strong>
+            <span>분석 실패 시 사용자 경험이 끊기지 않도록 즉각적인 수기 입력 인터페이스로의 전환을 유도합니다.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Area 4: Output Area -->
+      <div class="output-area">
+        <h3 class="area-title">확정 데이터는 이렇게 활용됩니다</h3>
+        <div class="output-grid">
+          <div class="output-card">
+            <div class="output-icon">📂</div>
+            <h4>반려동물별 지출 기록</h4>
+            <p>보호자가 확정한 데이터는 지출 기록으로 저장됩니다. 이를 통해 병원비, 용품비 등 아이별 지출 흐름을 확인할 수 있습니다.</p>
+          </div>
+          <div class="output-card">
+            <div class="output-icon">📊</div>
+            <h4>월간 지출 브리핑</h4>
+            <p>확정된 지출 기록을 기반으로 이번 달 지출 총액, 카테고리 비중을 참고용으로 요약합니다. 진단이나 처방은 제공하지 않습니다.</p>
+          </div>
+          <div class="output-card">
+            <div class="output-icon">📅</div>
+            <h4>케어 기록 후보</h4>
+            <p>영수증 분석 후 안내받은 복약, 재진 일정이 있다면 기록 후보로 남길 수 있습니다. 의료 판단이 아닌 보호자의 기록 관리를 돕는 보조 기능입니다.</p>
+          </div>
+        </div>
+        <div class="wow-callouts" style="margin-top: 1.5rem;">
+          <div class="wow-pill" style="max-width: 600px;">
+            <strong>Confirmed Data 구조</strong>
+            <span>AI가 추출한 초기 분석값은 draft 상태로 관리하고, 보호자가 확인·수정한 값만 최종 기록으로 저장하여 데이터 신뢰도를 높이는 Human-in-the-loop 구조를 설계했습니다.</span>
+          </div>
+        </div>
+        <p class="output-notice">“AI 분석은 참고용이며, 진단이나 처방을 제공하지 않습니다.”</p>
+      </div>
+
+      <!-- JSON Example Card -->
+      <div class="json-container" style="margin-top: 4rem;">
+        <div class="json-card">
+          <div class="json-header">
+            <span>분석 결과 예시 (Architecture Schema)</span>
+            <div class="json-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          </div>
+          <div class="json-content">
+            <pre><code>{
+  <span class="key">"aiDraft"</span>: {
+    <span class="key">"hospitalName"</span>: <span class="string">"다솜동물병원"</span>,
+    <span class="key">"amount"</span>: <span class="number">46000</span>,
+    <span class="key">"category"</span>: <span class="string">"MEDICAL"</span>,
+    <span class="key">"status"</span>: <span class="string">"draft"</span>
+  },
+  <span class="key">"confirmedData"</span>: {
+    <span class="key">"finalAmount"</span>: <span class="number">46000</span>,
+    <span class="key">"confirmedByUser"</span>: <span class="boolean">true</span>,
+    <span class="key">"type"</span>: <span class="string">"expense"</span>,
+    <span class="key">"status"</span>: <span class="string">"confirmed"</span>
+  }
+}</code></pre>
+          </div>
+        </div>
+        <p class="json-footer-note">“위 JSON은 포트폴리오 설명을 위한 공개용 예시입니다. 실제 운영 키, 사용자 데이터, 영수증 원본, 내부 프롬프트는 포함하지 않았습니다.”</p>
+      </div>
+
+      <!-- Area 5: Engine Logic Overview (Technical Deep Dive) -->
+      <div class="logic-deep-dive" style="margin-top: 6rem; border-top: 1px solid #f1f3f5; padding-top: 4rem;">
+        <div class="text-center" style="margin-bottom: 3rem;">
+          <div class="why-eyebrow">Technical Deep Dive</div>
+          <h3 class="area-title" style="margin-bottom: 1rem;">Engine Logic Overview</h3>
+          <p class="why-body" style="max-width: 800px; margin: 0 auto; color: var(--text-sub);">
+            AI 초안은 저장 전 검증 엔진을 거칩니다. 검증 엔진은 금액 정규화, 세금/할인 분리, 카테고리 보정, 의료성 표현 필터링을 수행한 뒤 사용자 확인이 필요한 `draft` 상태로 반환합니다.
+          </p>
+        </div>
+
+        <div class="json-container">
+          <div class="json-card" style="border-left: 4px solid #61dafb;">
+            <div class="json-header">
+              <span>validationEngine.ts (Public Pseudo-code)</span>
+              <span style="font-size: 0.65rem; opacity: 0.7;">TypeScript</span>
             </div>
-            <!-- Progress -->
-            <div style="padding:16px 18px 8px;flex-shrink:0;">
-              <div style="font-size:11px;font-weight:700;color:#8B95A1;margin-bottom:6px;">분석 진행률</div>
-              <div style="height:6px;background:#F2F4F6;border-radius:3px;overflow:hidden;">
-                <div class="ai-progress-bar"
-                  style="height:100%;width:0%;background:linear-gradient(90deg,#11C5A5,#4DE2C8);border-radius:3px;transition:width 2s ease;">
-                </div>
-              </div>
-            </div>
-            <!-- Items appearing -->
-            <div style="padding:8px 18px;flex:1;">
-              <div class="ai-item ai-item-1"
-                style="background:white;border-radius:14px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);opacity:0;transform:translateX(20px);transition:all 0.5s ease;">
-                <div style="display:flex;align-items:center;gap:8px;">
-                  <div
-                    style="width:28px;height:28px;background:#FFF0F0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;">
-                    🩺</div>
-                  <span style="font-size:12px;font-weight:700;color:#333D4B;">일반진료</span>
-                </div>
-                <span style="font-size:12px;font-weight:800;color:#191F28;">20,000원</span>
-              </div>
-              <div class="ai-item ai-item-2"
-                style="background:white;border-radius:14px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);opacity:0;transform:translateX(20px);transition:all 0.5s ease 0.3s;">
-                <div style="display:flex;align-items:center;gap:8px;">
-                  <div
-                    style="width:28px;height:28px;background:#F0F8FF;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;">
-                    💊</div>
-                  <span style="font-size:12px;font-weight:700;color:#333D4B;">항생제 처방</span>
-                </div>
-                <span style="font-size:12px;font-weight:800;color:#191F28;">12,000원</span>
-              </div>
-              <div class="ai-item ai-item-3"
-                style="background:white;border-radius:14px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);opacity:0;transform:translateX(20px);transition:all 0.5s ease 0.6s;">
-                <div style="display:flex;align-items:center;gap:8px;">
-                  <div
-                    style="width:28px;height:28px;background:#F0FBF8;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;">
-                    ✨</div>
-                  <span style="font-size:12px;font-weight:700;color:#333D4B;">회복 모니터링</span>
-                </div>
-                <span style="font-size:12px;font-weight:800;color:#191F28;">14,000원</span>
-              </div>
-              <div class="ai-item ai-item-4"
-                style="background:#F0FBF8;border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(17,197,165,0.2);opacity:0;transform:translateX(20px);transition:all 0.5s ease 0.9s;">
-                <span style="font-size:13px;font-weight:900;color:#191F28;">합계</span>
-                <span style="font-size:14px;font-weight:900;color:#11C5A5;">46,000원</span>
-              </div>
-            </div>
-            <div style="padding:8px 18px 12px;flex-shrink:0;">
-              <div style="font-size:9.5px;color:#8B95A1;text-align:center;">* AI 분석은 참고용이며 진단·처방을 제공하지 않습니다.</div>
+            <div class="json-content">
+              <pre><code><span class="boolean">function</span> <span class="key">validateReceiptDraft</span>(aiDraft) {
+  <span class="comment">// 1. 금액 정규화 및 총액 검증</span>
+  <span class="boolean">const</span> normalizedAmount = normalizeAmount(aiDraft.amount);
+
+  <span class="comment">// 2. 세금 정보 교차 체크 (과세/면세/부가세 합계 확인)</span>
+  <span class="boolean">const</span> taxChecked = validateTaxInfo({
+    taxableAmount: aiDraft.taxableAmount,
+    taxFreeAmount: aiDraft.taxFreeAmount,
+    vat: aiDraft.vat,
+    finalAmount: normalizedAmount,
+  });
+
+  <span class="comment">// 3. 할인 금액 및 텍스트 분석 결과 검토</span>
+  <span class="boolean">const</span> discountChecked = validateDiscountInfo({
+    discountText: aiDraft.discountText,
+    finalAmount: normalizedAmount,
+  });
+
+  <span class="comment">// 4. 의료 판단/진단 관련 위험 키워드 필터링 (Safety Guard)</span>
+  <span class="boolean">const</span> safeInsight = filterMedicalRiskTerms(aiDraft.insight);
+
+  <span class="boolean">return</span> {
+    ...aiDraft,
+    amount: normalizedAmount,
+    taxInfo: taxChecked,
+    discountInfo: discountChecked,
+    insight: safeInsight,
+    requiresUserConfirmation: <span class="boolean">true</span>,
+    status: <span class="string">"draft"</span>,
+  };
+}</code></pre>
             </div>
           </div>
-
-          <!-- SCREEN 3: Confirm & Save -->
-          <div class="story-screen" id="ss-3"
-            style="position:absolute;inset:0;display:flex;flex-direction:column;background:#F7F8FA;opacity:0;transform:translateX(100%);transition:opacity 0.6s,transform 0.6s;">
-            <!-- Header -->
-            <div
-              style="background:white;padding:14px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #F2F4F6;flex-shrink:0;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E5968" stroke-width="2.3">
-                <path d="M19 12H5M12 19l-7-7 7-7" />
-              </svg>
-              <span style="font-size:14px;font-weight:800;color:#191F28;">기록 확인</span>
-              <div style="margin-left:auto;font-size:11px;font-weight:700;color:#11C5A5;">보호자 확인 필요</div>
-            </div>
-            <!-- Card -->
-            <div style="padding:14px;flex:1;">
-              <div
-                style="background:white;border-radius:20px;padding:18px;box-shadow:0 4px 20px rgba(0,0,0,0.06);margin-bottom:12px;">
-                <div
-                  style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #F2F4F6;">
-                  <div
-                    style="width:40px;height:40px;background:#F0FBF8;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;">
-                    🏥</div>
-                  <div>
-                    <div style="font-size:13px;font-weight:900;color:#191F28;">다솜동물병원</div>
-                    <div style="font-size:10px;color:#8B95A1;font-weight:600;">2026.05.11 • 호두</div>
-                  </div>
-                </div>
-                <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span
-                    style="font-size:11.5px;color:#4E5968;font-weight:600;">🩺 일반진료</span><span
-                    style="font-size:11.5px;font-weight:800;">20,000원</span></div>
-                <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span
-                    style="font-size:11.5px;color:#4E5968;font-weight:600;">💊 항생제 처방</span><span
-                    style="font-size:11.5px;font-weight:800;">12,000원</span></div>
-                <div style="display:flex;justify-content:space-between;margin-bottom:12px;"><span
-                    style="font-size:11.5px;color:#4E5968;font-weight:600;">✨ 회복 모니터링</span><span
-                    style="font-size:11.5px;font-weight:800;">14,000원</span></div>
-                <div style="border-top:1px solid #F2F4F6;padding-top:10px;display:flex;justify-content:space-between;">
-                  <span style="font-size:13px;font-weight:900;">합계</span>
-                  <span style="font-size:14px;font-weight:900;color:#11C5A5;">46,000원</span>
-                </div>
-              </div>
-              <!-- Disclaimer -->
-              <div
-                style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:12px;padding:10px 12px;margin-bottom:12px;">
-                <div style="font-size:10px;font-weight:700;color:#92400E;line-height:1.5;">원본 영수증과 내용을 반드시 대조 확인 후
-                  저장해주세요.</div>
-              </div>
-              <!-- Save button -->
-              <div
-                style="background:linear-gradient(135deg,#11C5A5,#0D9E85);border-radius:16px;padding:14px;text-align:center;box-shadow:0 8px 24px rgba(17,197,165,0.3);cursor:pointer;">
-                <span style="font-size:14px;font-weight:900;color:white;">✓ 확인하고 저장하기</span>
-              </div>
-            </div>
+          <div class="json-footer-note" style="text-align: left; padding: 0 10px;">
+            <p>“위 코드는 포트폴리오 설명을 위한 공개용 예시입니다. 실제 Gemini 프롬프트, API Key, Firebase Rules, 내부 검증 로직 전문은 포함하지 않았습니다.”</p>
+            <p style="margin-top: 5px; font-weight: 700; color: #ef4444;">⚠️ AI 분석은 참고용이며, 진단이나 처방을 제공하지 않습니다.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    </div>
+  </section>
 
-          <!-- Step dots indicator -->
-          <div
-            style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;">
-            <div class="story-dot active" id="dot-1"
-              style="width:20px;height:6px;border-radius:3px;background:#11C5A5;transition:all 0.4s;"></div>
-            <div class="story-dot" id="dot-2"
-              style="width:6px;height:6px;border-radius:3px;background:#D1D5DB;transition:all 0.4s;"></div>
-            <div class="story-dot" id="dot-3"
-              style="width:6px;height:6px;border-radius:3px;background:#D1D5DB;transition:all 0.4s;"></div>
-          </div>
+  <!-- ── Section: Tech Stack & AI ── -->
+  <section class="tech-stack-section" id="tech-stack">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom: 4rem;">
+        <div class="why-eyebrow">Technology</div>
+        <h2 class="why-heading">어떤 기술과 AI를 사용했나요?</h2>
+        <p class="why-body" style="max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.15rem;">
+          PetLog는 React와 TypeScript 기반의 앱 구조 위에 Firebase와 Google Gemini API를 연결하고, 자체 분석 엔진과 보호자 확인 흐름을 더해 영수증을 지출 기록으로 바꾸는 구조로 설계했습니다.
+        </p>
+        <p class="highlight-text" style="font-size: 1.1rem; opacity: 0.9;">“AI가 초안을 만들고, 검증 로직이 보완하며, 보호자가 최종 확정합니다.”</p>
+      </div>
 
+      <div class="tech-stack-grid fade-up">
+        <!-- 1. Gemini -->
+        <div class="tech-card">
+          <div class="tech-card-icon">✨</div>
+          <h3>Google Gemini API</h3>
+          <p>영수증 이미지에서 병원명, 날짜, 항목명, 항목별 금액을 추출하고 지출 기록 초안을 생성하는 데 활용했습니다.</p>
+        </div>
+
+        <!-- 2. Analysis Engine -->
+        <div class="tech-card">
+          <div class="tech-card-icon">⚙️</div>
+          <h3>Medical Analysis Engine v1.8.1</h3>
+          <p>Gemini 분석 결과를 그대로 확정하지 않고, 카테고리, 총액, 할인/세금 정보를 검증해 보호자 확인 단계로 전달하는 분석 엔진입니다.</p>
+        </div>
+
+        <!-- 3. React + TS -->
+        <div class="tech-card">
+          <div class="tech-card-icon">⚛️</div>
+          <h3>React + TypeScript</h3>
+          <p>홈, 영수증 분석, 거래내역, 리포트 등 주요 앱 화면을 컴포넌트 기반으로 구현하고 주요 데이터 구조를 타입 기반으로 관리했습니다.</p>
+        </div>
+
+        <!-- 4. Auth -->
+        <div class="tech-card">
+          <div class="tech-card-icon">🔑</div>
+          <h3>Firebase Authentication</h3>
+          <p>사용자 로그인과 인증 상태를 관리하고, 사용자별 데이터 접근 흐름의 기반으로 활용했습니다.</p>
+        </div>
+
+        <!-- 5. Firestore -->
+        <div class="tech-card">
+          <div class="tech-card-icon">🔥</div>
+          <h3>Cloud Firestore</h3>
+          <p>반려동물 정보, 지출 기록, 영수증 분석 결과, 사용자 확인 데이터를 구조화해 저장했습니다.</p>
+        </div>
+
+        <!-- 6. Storage -->
+        <div class="tech-card">
+          <div class="tech-card-icon">📁</div>
+          <h3>Firebase Storage</h3>
+          <p>영수증 이미지 업로드와 삭제를 사용자별 경로로 관리했습니다.</p>
+        </div>
+
+        <!-- 7. Vercel -->
+        <div class="tech-card">
+          <div class="tech-card-icon">▲</div>
+          <h3>Vercel</h3>
+          <p>무료 베타 테스트를 위한 웹앱 배포와 프리뷰 환경을 구성했습니다.</p>
+        </div>
+
+        <!-- 8. Vanilla JS (Landing) -->
+        <div class="tech-card">
+          <div class="tech-card-icon">📜</div>
+          <h3>HTML + CSS + Vanilla JS</h3>
+          <p>홍보/포트폴리오용 랜딩페이지는 기존 앱과 분리된 정적 웹페이지로 제작했습니다.</p>
+        </div>
+      </div>
+
+      <!-- HITL Box -->
+      <div class="hitl-box fade-up">
+        <div class="hitl-header">
+          <span class="hitl-tag">Human-in-the-loop</span>
+          <h3 style="margin: 0;">Human-in-the-loop 구조</h3>
+        </div>
+        <p>
+          PetLog는 AI 분석 결과를 자동 저장하지 않습니다. AI가 영수증을 읽고 기록 초안을 만들면, 검증 로직이 총액·세금·할인 정보를 보완하고, 보호자가 최종 확인한 데이터만 반려동물별 지출 기록으로 저장합니다.
+        </p>
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #eef0f2; font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">
+          ⚠️ AI 분석은 참고용이며, 진단이나 처방을 제공하지 않습니다.
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── Section: AI Usage ── -->
+  <section class="section ai-usage" id="ai-usage">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="why-eyebrow">AI 활용</div>
+        <h2 class="why-heading">AI를 어떻게 활용했나요?</h2>
+        <p class="why-body" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+          PetLog의 AI는 의료 판단을 대신하지 않습니다.<br>영수증과 지출 기록을 더 쉽게 정리하기 위한 보조 도구로 활용됩니다.
+        </p>
+      </div>
+
+      <div class="ai-usage-grid fade-up">
+        <div class="ai-usage-card">
+          <div class="ai-usage-icon">📸</div>
+          <h3>영수증 OCR</h3>
+          <p>업로드된 영수증 이미지에서 병원명, 날짜, 항목, 금액 정보를 읽어오는 데 AI를 활용합니다.</p>
+        </div>
+        <div class="ai-usage-card">
+          <div class="ai-usage-icon">📂</div>
+          <h3>지출 항목 초안 정리</h3>
+          <p>진료/상담, 검사/진단, 처치/주사, 약제/조제 등 보호자가 보기 쉬운 카테고리 초안을 생성합니다.</p>
+        </div>
+        <div class="ai-usage-card">
+          <div class="ai-usage-icon">📊</div>
+          <h3>월간 지출 브리핑</h3>
+          <p>이번 달 지출 흐름과 병원비 비중을 참고용으로 요약합니다.</p>
+        </div>
+        <div class="ai-usage-card">
+          <div class="ai-usage-icon">📝</div>
+          <h3>케어 기록 후보</h3>
+          <p>복약, 재진, 회복 체크 일정이 있다면 보호자가 기록할 수 있도록 후보 형태로 안내합니다.</p>
+        </div>
+        <div class="ai-usage-card">
+          <div class="ai-usage-icon">⚙️</div>
+          <h3>보호자 확인 기반 개선</h3>
+          <p>AI 결과는 자동 확정되지 않으며, 보호자가 확인한 데이터를 바탕으로 더 나은 기록 경험을 설계합니다.</p>
+        </div>
+      </div>
+
+      <div class="ai-notice-box fade-up">
+        <p><strong>⚠️ 주의:</strong> AI 분석은 참고용이며, 진단이나 처방을 제공하지 않습니다.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">PetLog는 AI가 의료 결정을 내리는 앱이 아니라, 보호자가 기록을 더 쉽게 정리할 수 있도록 돕는 기록 도구입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section: AI Prompt ── -->
+  <section class="section ai-prompt" id="ai-prompt">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="why-eyebrow">AI 프롬프트</div>
+        <h2 class="why-heading">실제로 사용한 AI 프롬프트</h2>
+        <p class="why-body" style="max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+          PetLog는 AI에게 명확한 역할과 제한 조건을 부여해,<br>의료 판단이 아닌 기록 정리에 집중하도록 설계했습니다.
+        </p>
+      </div>
+
+      <div class="prompt-grid fade-up">
+        <div class="prompt-card">
+          <h4>역할 지정</h4>
+          <p>“당신은 동물병원 영수증을 분석해 보호자가 이해하기 쉬운 지출 기록 초안을 만드는 보조 AI입니다.”</p>
+        </div>
+        <div class="prompt-card">
+          <h4>분석 대상</h4>
+          <p>“영수증 이미지에서 병원명, 결제일, 총액, 항목명, 항목별 금액을 추출합니다.”</p>
+        </div>
+        <div class="prompt-card">
+          <h4>분류 기준</h4>
+          <p>“항목을 진료/상담, 검사/진단, 처치/주사, 수술/마취, 약제/조제, 기타 지출 등으로 분류합니다.”</p>
+        </div>
+        <div class="prompt-card">
+          <h4>안전 제한</h4>
+          <p>“진단, 처방, 치료 필요 여부, 질병 예측은 생성하지 않습니다. 결과는 보호자가 확인해야 하는 참고용 초안입니다.”</p>
+        </div>
+        <div class="prompt-card">
+          <h4>출력 방식</h4>
+          <p>“JSON 형태로 병원명, 날짜, 총액, 항목 리스트, 카테고리, 주의 문구를 구조화해 반환합니다.”</p>
+        </div>
+      </div>
+
+      <div class="prompt-example-box fade-up">
+        <div class="prompt-header">
+          <span>AI System Prompt Example</span>
+          <div class="prompt-dots"><span></span><span></span><span></span></div>
+        </div>
+        <pre><code>“동물병원 영수증 이미지를 분석해 주세요.
+목표는 진단이나 처방이 아니라, 보호자가 확인할 수 있는 지출 기록 초안을 만드는 것입니다.
+
+다음 정보를 추출해 주세요:
+- 병원명
+- 결제일
+- 총 결제금액
+- 항목명
+- 항목별 금액
+- 지출 카테고리
+
+주의:
+- 질병을 예측하지 마세요.
+- 치료 필요 여부를 판단하지 마세요.
+- 처방이나 복약 지시를 생성하지 마세요.
+- 결과는 보호자가 확인해야 하는 참고용 초안입니다.”</code></pre>
+      </div>
+      
+      <p class="prompt-footer-note fade-up">“위 프롬프트는 공개용으로 재구성한 예시이며, 실제 운영 환경의 보안 정보나 API 설정은 포함하지 않았습니다.”</p>
+    </div>
+  </section>
 
   <section class="feature-showcase">
     <div class="container">
@@ -681,11 +971,15 @@
       <!-- Bottom row: nav + copyright -->
       <div class="footer-bottom">
         <nav class="footer-nav">
-          <a href="#">서비스 소개</a>
+          <a href="#why">만든 이유</a>
+          <span class="footer-dot">·</span>
+          <a href="#problem-solved">해결 문제</a>
+          <span class="footer-dot">·</span>
+          <a href="#flowchart">사용 흐름</a>
+          <span class="footer-dot">·</span>
+          <a href="#ai-usage">AI 활용</a>
           <span class="footer-dot">·</span>
           <a href="https://forms.gle/BroTa5oyXdejbPEA6" target="_blank" rel="noopener">무료 베타</a>
-          <span class="footer-dot">·</span>
-          <a href="#">AI 안내</a>
         </nav>
         <p class="footer-copy">© 2026 PetLog. All rights reserved.</p>
       </div>
