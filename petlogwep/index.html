@@ -545,33 +545,6 @@
         <p class="output-notice">“AI 분석은 참고용이며, 진단이나 처방을 제공하지 않습니다.”</p>
       </div>
 
-      <!-- JSON Example Card -->
-      <div class="json-container" style="margin-top: 4rem;">
-        <div class="json-card">
-          <div class="json-header">
-            <span>분석 결과 예시 (Architecture Schema)</span>
-            <div class="json-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
-          </div>
-          <div class="json-content">
-            <pre><code>{
-  <span class="key">"aiDraft"</span>: {
-    <span class="key">"hospitalName"</span>: <span class="string">"다솜동물병원"</span>,
-    <span class="key">"amount"</span>: <span class="number">46000</span>,
-    <span class="key">"category"</span>: <span class="string">"MEDICAL"</span>,
-    <span class="key">"status"</span>: <span class="string">"draft"</span>
-  },
-  <span class="key">"confirmedData"</span>: {
-    <span class="key">"finalAmount"</span>: <span class="number">46000</span>,
-    <span class="key">"confirmedByUser"</span>: <span class="boolean">true</span>,
-    <span class="key">"type"</span>: <span class="string">"expense"</span>,
-    <span class="key">"status"</span>: <span class="string">"confirmed"</span>
-  }
-}</code></pre>
-          </div>
-        </div>
-        <p class="json-footer-note">“위 JSON은 포트폴리오 설명을 위한 공개용 예시입니다. 실제 운영 키, 사용자 데이터, 영수증 원본, 내부 프롬프트는 포함하지 않았습니다.”</p>
-      </div>
-
       <!-- Area 5: Engine Logic Overview (Technical Deep Dive) -->
       <div class="logic-deep-dive" style="margin-top: 6rem; border-top: 1px solid #f1f3f5; padding-top: 4rem;">
         <div class="text-center" style="margin-bottom: 3rem;">
@@ -630,8 +603,6 @@
       </div>
     </div>
   </section>
-    </div>
-  </section>
 
   <!-- ── Section: Tech Stack & AI ── -->
   <section class="tech-stack-section" id="tech-stack">
@@ -645,61 +616,84 @@
         <p class="highlight-text" style="font-size: 1.1rem; opacity: 0.9;">“AI가 초안을 만들고, 검증 로직이 보완하며, 보호자가 최종 확정합니다.”</p>
       </div>
 
-      <div class="tech-stack-grid fade-up">
-        <!-- 1. Gemini -->
-        <div class="tech-card">
-          <div class="tech-card-icon">✨</div>
-          <h3>Google Gemini API</h3>
-          <p>영수증 이미지에서 병원명, 날짜, 항목명, 항목별 금액을 추출하고 지출 기록 초안을 생성하는 데 활용했습니다.</p>
+      <!-- Area 1: Core Product Stack -->
+      <div style="margin-bottom: 5rem;">
+        <h3 class="area-title" style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 2rem; text-align: left;">Core Product Stack</h3>
+        <div class="tech-stack-grid">
+          <!-- Gemini -->
+          <div class="tech-card">
+            <div class="tech-icon">💎</div>
+            <h4>Google Gemini API</h4>
+            <p>영수증 이미지에서 병원명, 날짜, 항목별 금액을 추출하는 AI 분석 심장부로 활용했습니다.</p>
+          </div>
+          <!-- Engine -->
+          <div class="tech-card">
+            <div class="tech-icon">⚙️</div>
+            <h4>Medical Analysis Engine v1.8.1</h4>
+            <p>Gemini 분석 결과를 그대로 저장하지 않고 총액, 할인, 세금 정보를 교차 검증하는 자체 분석 로직입니다.</p>
+          </div>
+          <!-- React/TS -->
+          <div class="tech-card">
+            <div class="tech-icon">⚛️</div>
+            <h4>React + TypeScript</h4>
+            <p>홈, 지출 등록, 리포트 화면을 컴포넌트 단위로 개발하고 엄격한 타입 체크로 데이터 안정성을 확보했습니다.</p>
+          </div>
+          <!-- Auth -->
+          <div class="tech-card">
+            <div class="tech-icon">🔑</div>
+            <h4>Firebase Authentication</h4>
+            <p>사용자 로그인과 인증 상태를 관리하며, 사용자별 데이터를 안전하게 구분하는 기반으로 사용했습니다.</p>
+          </div>
+          <!-- Firestore -->
+          <div class="tech-card">
+            <div class="tech-icon">🔥</div>
+            <h4>Cloud Firestore</h4>
+            <p>반려동물 정보, 지출 기록, 분석 데이터를 실시간으로 동기화하고 계층형 데이터 구조로 관리합니다.</p>
+          </div>
+          <!-- Storage -->
+          <div class="tech-card">
+            <div class="tech-icon">📁</div>
+            <h4>Firebase Storage</h4>
+            <p>분석을 요청한 이미지 업로드와 영수증 원본 파일을 사용자별로 안전하게 관리합니다.</p>
+          </div>
+          <!-- Vercel -->
+          <div class="tech-card">
+            <div class="tech-icon">▲</div>
+            <h4>Vercel</h4>
+            <p>무료 베타 테스트를 위한 웹 앱 배포와 고성능 글로벌 전송 환경을 구성했습니다.</p>
+          </div>
+          <!-- Static Page -->
+          <div class="tech-card">
+            <div class="tech-icon">📄</div>
+            <h4>HTML + CSS + Vanilla JS</h4>
+            <p>홍보/포트폴리오용 랜딩페이지는 기존 앱과 분리된 정적 웹페이지로 제작해 접근성을 높였습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Area 2: AI-assisted Development Workflow -->
+      <div class="workflow-section" style="border-top: 1px solid #f1f3f5; padding-top: 5rem;">
+        <div class="text-center" style="margin-bottom: 3.5rem;">
+          <div class="why-eyebrow">Development Workflow</div>
+          <h3 class="area-title" style="margin-bottom: 1.5rem;">AI-assisted Development Workflow</h3>
+          <p class="why-body" style="max-width: 950px; margin: 0 auto; color: var(--text-sub); line-height: 1.8; word-break: keep-all;">
+            PetLog는 개발 과정에서 ChatGPT와 Google Antigravity를 활용해 기능 명세 정리, 코드 구조 검토, React/TypeScript 오류 분석, Firebase 연동 이슈 점검, Gemini 응답 파싱 검토, Production Smoke Test 체크리스트 작성에 도움을 받았습니다. AI 도구는 코드를 대신 완성하는 수단이 아니라, 문제를 빠르게 구조화하고 검증 속도를 높이는 협업 도구로 사용했습니다. 핵심 서비스 구조, 최종 구현 판단, 릴리즈 기준은 직접 검토해 결정했습니다.
+          </p>
         </div>
 
-        <!-- 2. Analysis Engine -->
-        <div class="tech-card">
-          <div class="tech-card-icon">⚙️</div>
-          <h3>Medical Analysis Engine v1.8.1</h3>
-          <p>Gemini 분석 결과를 그대로 확정하지 않고, 카테고리, 총액, 할인/세금 정보를 검증해 보호자 확인 단계로 전달하는 분석 엔진입니다.</p>
-        </div>
-
-        <!-- 3. React + TS -->
-        <div class="tech-card">
-          <div class="tech-card-icon">⚛️</div>
-          <h3>React + TypeScript</h3>
-          <p>홈, 영수증 분석, 거래내역, 리포트 등 주요 앱 화면을 컴포넌트 기반으로 구현하고 주요 데이터 구조를 타입 기반으로 관리했습니다.</p>
-        </div>
-
-        <!-- 4. Auth -->
-        <div class="tech-card">
-          <div class="tech-card-icon">🔑</div>
-          <h3>Firebase Authentication</h3>
-          <p>사용자 로그인과 인증 상태를 관리하고, 사용자별 데이터 접근 흐름의 기반으로 활용했습니다.</p>
-        </div>
-
-        <!-- 5. Firestore -->
-        <div class="tech-card">
-          <div class="tech-card-icon">🔥</div>
-          <h3>Cloud Firestore</h3>
-          <p>반려동물 정보, 지출 기록, 영수증 분석 결과, 사용자 확인 데이터를 구조화해 저장했습니다.</p>
-        </div>
-
-        <!-- 6. Storage -->
-        <div class="tech-card">
-          <div class="tech-card-icon">📁</div>
-          <h3>Firebase Storage</h3>
-          <p>영수증 이미지 업로드와 삭제를 사용자별 경로로 관리했습니다.</p>
-        </div>
-
-        <!-- 7. Vercel -->
-        <div class="tech-card">
-          <div class="tech-card-icon">▲</div>
-          <h3>Vercel</h3>
-          <p>무료 베타 테스트를 위한 웹앱 배포와 프리뷰 환경을 구성했습니다.</p>
-        </div>
-
-        <!-- 8. Vanilla JS (Landing) -->
-        <div class="tech-card">
-          <div class="tech-card-icon">📜</div>
-          <h3>HTML + CSS + Vanilla JS</h3>
-          <p>홍보/포트폴리오용 랜딩페이지는 기존 앱과 분리된 정적 웹페이지로 제작했습니다.</p>
+        <div class="tech-stack-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 900px; margin: 0 auto;">
+          <!-- ChatGPT -->
+          <div class="tech-card">
+            <div class="tech-icon">💬</div>
+            <h4>ChatGPT</h4>
+            <p style="word-break: keep-all;">기획 문서 정리, 기능 명세 작성, 오류 원인 분석, QA 체크리스트 구성, 포트폴리오 설명 문구 정리에 활용했습니다. 단순 코드 생성이 아니라, 제품 구조와 릴리즈 판단을 검토하는 AI 협업 도구로 사용했습니다.</p>
+          </div>
+          <!-- Antigravity -->
+          <div class="tech-card">
+            <div class="tech-icon">🧭</div>
+            <h4>Google Antigravity</h4>
+            <p style="word-break: keep-all;">AI 에이전트 기반 개발 환경으로, 코드 수정 흐름 점검, 파일 단위 리팩토링, 브라우저 테스트, 오류 재현 및 검증 과정에 활용했습니다. 최종 반영 여부는 직접 확인하고, Production Smoke Test 기준에 맞춰 최소 핫픽스 방식으로 적용했습니다.</p>
+          </div>
         </div>
       </div>
 
@@ -906,19 +900,19 @@
 
         <!-- Pet spending card -->
         <div class="cta-card cta-card-spend">
-          <div style="font-size:11px;font-weight:700;color:#8B95A1;margin-bottom:4px;">이번 달 반려동물 지출</div>
-          <div style="font-size:26px;font-weight:900;color:#191F28;letter-spacing:-0.03em;margin-bottom:14px;">
-            124,000<span style="font-size:15px;">원</span></div>
+          <div style="font-size:11px;font-weight:700;color:#6B7684;margin-bottom:4px;letter-spacing: 0.02em;">이번 달 반려동물 지출</div>
+          <div style="font-size:26px;font-weight:900;color:var(--brand-primary);letter-spacing:-0.03em;margin-bottom:14px;">
+            124,000<span style="font-size:15px; font-weight: 700;">원</span></div>
           <div style="display:flex;gap:8px;">
-            <div style="flex:1;background:#F7F8FA;border-radius:12px;padding:10px;text-align:center;">
+            <div style="flex:1;background:#F9FAFB;border: 1px solid #F1F3F5; border-radius:12px;padding:10px;text-align:center;">
               <div style="font-size:16px;margin-bottom:3px;">🐶</div>
               <div style="font-size:10px;font-weight:700;color:#4E5968;">호두</div>
-              <div style="font-size:11px;font-weight:800;margin-top:2px;">46,000원</div>
+              <div style="font-size:12px;font-weight:800;color:#191F28;margin-top:2px;">46,000원</div>
             </div>
-            <div style="flex:1;background:#F7F8FA;border-radius:12px;padding:10px;text-align:center;">
+            <div style="flex:1;background:#F9FAFB;border: 1px solid #F1F3F5; border-radius:12px;padding:10px;text-align:center;">
               <div style="font-size:16px;margin-bottom:3px;">🐱</div>
               <div style="font-size:10px;font-weight:700;color:#4E5968;">나나</div>
-              <div style="font-size:11px;font-weight:800;margin-top:2px;">78,000원</div>
+              <div style="font-size:12px;font-weight:800;color:#191F28;margin-top:2px;">78,000원</div>
             </div>
           </div>
         </div>

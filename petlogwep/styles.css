@@ -1043,6 +1043,8 @@ body {
   color: var(--text-sub);
   line-height: 1.6;
   margin: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .pipeline-arrow {
@@ -1105,6 +1107,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .wow-pill strong {
@@ -1135,6 +1139,7 @@ body {
   font-weight: 800;
   margin-bottom: 3rem;
   color: var(--text-main);
+  word-break: keep-all;
 }
 
 .exception-grid {
@@ -1173,6 +1178,8 @@ body {
   color: var(--text-sub);
   line-height: 1.6;
   margin: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* Output Area */
@@ -1209,6 +1216,8 @@ body {
   font-size: 0.95rem;
   color: var(--text-sub);
   line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .output-notice {
@@ -1217,6 +1226,23 @@ body {
   font-size: 0.9rem;
   color: var(--text-muted);
   font-weight: 600;
+  word-break: keep-all;
+}
+
+/* Logic Deep Dive p */
+.logic-deep-dive p {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* General Why Section subcopy */
+.why-body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.why-heading {
+  word-break: keep-all;
 }
 
 /* Responsive */
