@@ -135,5 +135,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 6. Sticky Story Logic - Removed in favor of Pipeline Diagram
+
+  // 7. AI Prompt Collapsible UI
+  const promptToggle = document.getElementById("prompt-toggle-btn");
+  const promptWrapper = document.getElementById("prompt-content-wrapper");
+  const promptIcon = document.getElementById("prompt-toggle-icon");
+  if (promptToggle && promptWrapper && promptIcon) {
+    promptToggle.addEventListener("click", () => {
+      const isCollapsed = promptWrapper.style.maxHeight === "0px" || promptWrapper.style.maxHeight === "";
+      if (isCollapsed) {
+        promptWrapper.style.maxHeight = promptWrapper.scrollHeight + "px";
+        promptIcon.innerText = "전문 접기 ▲";
+      } else {
+        promptWrapper.style.maxHeight = "0px";
+        promptIcon.innerText = "전문 보기 ▼";
+      }
+    });
+  }
+
+  // 8. Engine Logic Collapsible UI
+  const engineToggle = document.getElementById("engine-toggle-btn");
+  const engineWrapper = document.getElementById("engine-content-wrapper");
+  const engineIcon = document.getElementById("engine-toggle-icon");
+  if (engineToggle && engineWrapper && engineIcon) {
+    engineToggle.addEventListener("click", () => {
+      const isCollapsed = engineWrapper.style.maxHeight === "0px" || engineWrapper.style.maxHeight === "";
+      if (isCollapsed) {
+        engineWrapper.style.maxHeight = engineWrapper.scrollHeight + "px";
+        engineIcon.innerText = "코드 접기 ▲";
+      } else {
+        engineWrapper.style.maxHeight = "0px";
+        engineIcon.innerText = "코드 보기 ▼";
+      }
+    });
+  }
 });
 
