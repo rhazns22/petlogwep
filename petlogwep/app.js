@@ -46,6 +46,143 @@
   document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
 })();
 
+(() => {
+  const RECEIPT_FILE_NAME = "petlog-test-receipt.png";
+  const receiptLines = [
+    { text: "전시용 TEST RECEIPT", x: 300, y: 70, size: 30, weight: 800, anchor: "middle" },
+    { text: "SAMPLE / 개인정보 없음", x: 300, y: 112, size: 30, weight: 800, anchor: "middle" },
+    { text: "----------------------------------------", x: 300, y: 154, size: 22, anchor: "middle" },
+    { text: "해오름동물의료센터", x: 300, y: 210, size: 38, weight: 800, anchor: "middle" },
+    { text: "사업자번호: 123-45-67890", x: 52, y: 258 },
+    { text: "전화: 042-123-4567", x: 52, y: 295 },
+    { text: "주소: 대전광역시 서구 둔산로 100", x: 52, y: 332 },
+    { text: "----------------------------------------", x: 300, y: 370, size: 22, anchor: "middle" },
+    { text: "영수증번호: 20260601-017", x: 52, y: 410 },
+    { text: "방문일시: 2026-06-01 14:32", x: 52, y: 447 },
+    { text: "보호자: 박주은", x: 52, y: 484 },
+    { text: "환자명: 토리", x: 52, y: 521 },
+    { text: "종: 강아지 / 나이: 4세 / 성별: M", x: 52, y: 558 },
+    { text: "----------------------------------------", x: 300, y: 598, size: 22, anchor: "middle" },
+    { text: "No.", x: 58, y: 636 },
+    { text: "항목", x: 135, y: 636 },
+    { text: "금액(원)", x: 520, y: 636, anchor: "end" },
+    { text: "----------------------------------------", x: 300, y: 672, size: 22, anchor: "middle" },
+    { text: "1.", x: 60, y: 710 },
+    { text: "진찰/상담", x: 137, y: 710 },
+    { text: "20,000", x: 520, y: 710, anchor: "end" },
+    { text: "2.", x: 60, y: 747 },
+    { text: "혈액검사", x: 137, y: 747 },
+    { text: "45,000", x: 520, y: 747, anchor: "end" },
+    { text: "3.", x: 60, y: 784 },
+    { text: "엑스레이", x: 137, y: 784 },
+    { text: "35,000", x: 520, y: 784, anchor: "end" },
+    { text: "4.", x: 60, y: 821 },
+    { text: "처치/주사", x: 137, y: 821 },
+    { text: "25,000", x: 520, y: 821, anchor: "end" },
+    { text: "5.", x: 60, y: 858 },
+    { text: "약제/조제", x: 137, y: 858 },
+    { text: "18,000", x: 520, y: 858, anchor: "end" },
+    { text: "----------------------------------------", x: 300, y: 897, size: 22, anchor: "middle" },
+    { text: "소계", x: 52, y: 934 },
+    { text: "143,000", x: 520, y: 934, anchor: "end" },
+    { text: "공급가액", x: 52, y: 971 },
+    { text: "130,000", x: 520, y: 971, anchor: "end" },
+    { text: "부가세", x: 52, y: 1008 },
+    { text: "13,000", x: 520, y: 1008, anchor: "end" },
+    { text: "할인", x: 52, y: 1045 },
+    { text: "-3,000", x: 520, y: 1045, anchor: "end" },
+    { text: "========================================", x: 300, y: 1084, size: 22, anchor: "middle" },
+    { text: "총 결제금액", x: 52, y: 1132, size: 28, weight: 800 },
+    { text: "140,000", x: 520, y: 1132, size: 32, weight: 800, anchor: "end" },
+    { text: "----------------------------------------", x: 300, y: 1172, size: 22, anchor: "middle" },
+    { text: "결제수단", x: 52, y: 1212 },
+    { text: "카드", x: 520, y: 1212, anchor: "end" },
+    { text: "승인번호", x: 52, y: 1249 },
+    { text: "538291", x: 520, y: 1249, anchor: "end" },
+    { text: "----------------------------------------", x: 300, y: 1290, size: 22, anchor: "middle" },
+    { text: "펫로그 전시 테스트용 영수증", x: 300, y: 1342, size: 25, anchor: "middle" },
+    { text: "실제 결제용 아님", x: 300, y: 1384, size: 25, anchor: "middle" },
+  ];
+
+  function escapeSvgText(value) {
+    return value
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function buildReceiptSvg() {
+    const textNodes = receiptLines.map((line) => {
+      const anchor = line.anchor || "start";
+      const weight = line.weight || 500;
+      const size = line.size || 24;
+      return `<text x="${line.x}" y="${line.y}" text-anchor="${anchor}" font-size="${size}" font-weight="${weight}">${escapeSvgText(line.text)}</text>`;
+    }).join("");
+
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1450" viewBox="0 0 600 1450">
+      <rect width="600" height="1450" fill="#f8f5ee"/>
+      <filter id="paperNoise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+        <feColorMatrix type="saturate" values="0"/>
+        <feComponentTransfer>
+          <feFuncA type="table" tableValues="0 0.09"/>
+        </feComponentTransfer>
+      </filter>
+      <rect width="600" height="1450" filter="url(#paperNoise)" opacity="0.25"/>
+      <g fill="#151515" font-family="'Noto Sans KR', 'Apple SD Gothic Neo', Arial, sans-serif">${textNodes}</g>
+    </svg>`;
+  }
+
+  function downloadUrl(url, fileName) {
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  function downloadTestReceipt() {
+    const svg = buildReceiptSvg();
+    const svgBlob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
+    const svgUrl = URL.createObjectURL(svgBlob);
+    const image = new Image();
+
+    image.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = 600;
+      canvas.height = 1450;
+      const context = canvas.getContext("2d");
+      context.drawImage(image, 0, 0);
+      URL.revokeObjectURL(svgUrl);
+
+      canvas.toBlob((pngBlob) => {
+        if (!pngBlob) {
+          downloadUrl(URL.createObjectURL(svgBlob), "petlog-test-receipt.svg");
+          return;
+        }
+
+        const pngUrl = URL.createObjectURL(pngBlob);
+        downloadUrl(pngUrl, RECEIPT_FILE_NAME);
+        setTimeout(() => URL.revokeObjectURL(pngUrl), 1000);
+      }, "image/png");
+    };
+
+    image.onerror = () => {
+      downloadUrl(svgUrl, "petlog-test-receipt.svg");
+      setTimeout(() => URL.revokeObjectURL(svgUrl), 1000);
+    };
+
+    image.src = svgUrl;
+  }
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest(".download-receipt-btn");
+    if (!button) return;
+    downloadTestReceipt();
+  });
+})();
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // ── Counter Animation ──
@@ -136,38 +273,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 6. Sticky Story Logic - Removed in favor of Pipeline Diagram
 
-  // 7. AI Prompt Collapsible UI
-  const promptToggle = document.getElementById("prompt-toggle-btn");
-  const promptWrapper = document.getElementById("prompt-content-wrapper");
-  const promptIcon = document.getElementById("prompt-toggle-icon");
-  if (promptToggle && promptWrapper && promptIcon) {
-    promptToggle.addEventListener("click", () => {
-      const isCollapsed = promptWrapper.style.maxHeight === "0px" || promptWrapper.style.maxHeight === "";
-      if (isCollapsed) {
-        promptWrapper.style.maxHeight = promptWrapper.scrollHeight + "px";
-        promptIcon.innerText = "전문 접기 ▲";
-      } else {
-        promptWrapper.style.maxHeight = "0px";
-        promptIcon.innerText = "전문 보기 ▼";
-      }
-    });
-  }
-
-  // 8. Engine Logic Collapsible UI
-  const engineToggle = document.getElementById("engine-toggle-btn");
-  const engineWrapper = document.getElementById("engine-content-wrapper");
-  const engineIcon = document.getElementById("engine-toggle-icon");
-  if (engineToggle && engineWrapper && engineIcon) {
-    engineToggle.addEventListener("click", () => {
-      const isCollapsed = engineWrapper.style.maxHeight === "0px" || engineWrapper.style.maxHeight === "";
-      if (isCollapsed) {
-        engineWrapper.style.maxHeight = engineWrapper.scrollHeight + "px";
-        engineIcon.innerText = "코드 접기 ▲";
-      } else {
-        engineWrapper.style.maxHeight = "0px";
-        engineIcon.innerText = "코드 보기 ▼";
-      }
-    });
-  }
+  // Collapsible elements are handled by native HTML5 details/summary tags.
 });
-
